@@ -16,7 +16,7 @@ app.post("/addtask", function (req, res) {
     var newTask = req.body.newtask;
     //add the new task from the post route
     tasks.push({ name: newTask, done: false });
-    res.render("index", { tasks: tasks });
+    res.redirect("/");
 });
 
 app.post("/removetask", function (req, res) {
@@ -26,7 +26,7 @@ app.post("/removetask", function (req, res) {
             tasks[i].done = true;
         }
     }
-    res.render("index", { tasks: tasks });
+    res.redirect("/");
 });
 
 //render the ejs and display tasks
